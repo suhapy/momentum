@@ -3,6 +3,9 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: white;
 }
+main {
+  padding: 60px;
+}
 .hidden {
   display: none;
 }
