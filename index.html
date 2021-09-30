@@ -4,52 +4,104 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/style.css" />
     <title>Momentum</title>
   </head>
   <body>
     <main>
       <section class="view__left">
-        <h2 class="clock">00:00</h2>
-        <form class="login-form hidden">
-          <input
-            type="text"
-            required
-            maxlength="10"
-            placeholder="What is your name?"
-            class="login-form__input-name"
-          />
-          <button class="login-form__btn">Log in</button>
-        </form>
-        <h1 class="display-name hidden"></h1>
-      </section>
-      <section class="view__middle">
-        <div class="quoteSet">
-          <img src="" alt="" class="quoteSet__img" />
-          <span class="quoteSet__quote"></span
-          ><span class="quoteSet__author"></span>
+        <div class="view__left__row">
+          <h2 class="clock">00:00</h2>
+          <div class="login__set">
+            <form class="login-form hidden">
+              <input
+                type="text"
+                required
+                maxlength="10"
+                placeholder="What is your name?"
+                class="login-form__input-name"
+              />
+            </form>
+            <h1 class="display-name hidden"></h1>
+          </div>
+          <div class="emotion__set">
+            <div class="emotion__question">
+              <span class="emotion__ask">How are you?</span>
+              <span
+                class="
+                  emotion__btn emotion__btn-good
+                  material-icons-round
+                  md-light.md-inactive
+                "
+              >
+                sentiment_satisfied
+              </span>
+              <span class="emotion__btn emotion__btn-soso material-icons-round">
+                sentiment_neutral
+              </span>
+              <span class="emotion__btn emotion__btn-bad material-icons-round">
+                sentiment_dissatisfied
+              </span>
+            </div>
+            <div class="emotion__answer"></div>
+          </div>
+        </div>
+        <div class="view__left__row">
+          <div class="background-info">
+            <div class="background-info__title">
+              <span class="background-city"></span>
+            </div>
+            <div class="background-info__share">
+              <span>Share with your friends!</span
+              ><span class="background__btn--like material-icons-round">
+                favorite
+              </span>
+              <span class="material-icons-round"> send </span>
+            </div>
+          </div>
         </div>
       </section>
+      <div class="view__middle">
+        <div class="quoteSet">
+          <img src="" alt="" class="quoteSet__img" />
+          <div class="quoteSet__row">
+            <span class="quoteSet__btn material-icons-round"> more_horiz </span>
+            <div class="quoteSet__text">
+              <span class="quoteSet__quote"></span
+              ><span class="quoteSet__author"></span>
+            </div>
+            <a href="index.html"
+              ><span class="quoteSet__btn material-icons-round">
+                refresh
+              </span></a
+            >
+          </div>
+        </div>
+      </div>
       <section class="view__right">
-        <form class="todo__form">
-          <input
-            type="text"
-            placeholder="Tell me what you did today. The more trivial is the better!"
-            required
-            class="todo__input"
-          />
-        </form>
-        <ul class="todo__list"></ul>
+        <div class="weather"><span></span></div>
+        <div class="todo__set">
+          <div class="todo__title">Todo List</div>
+          <form class="todo__form">
+            <input
+              type="text"
+              placeholder="Tell me what to do"
+              required
+              class="todo__input"
+            />
+          </form>
+          <ul class="todo__list"></ul>
+        </div>
       </section>
     </main>
-
     <div class="background__cover"></div>
+
     <script src="js/greetings.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/quotes.js"></script>
     <script src="js/background.js"></script>
     <script src="js/todo.js"></script>
     <script src="js/weather.js"></script>
+    <script src="js/emotion.js"></script>
   </body>
 </html>
