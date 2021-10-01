@@ -10,11 +10,24 @@ const emotions = [
   { btn: emotionBtnBad, answer: "하루는 쉬어가도 괜찮아요!" },
 ];
 
+const EMOTIONCHOICE_KEY = "emotionChoice";
+
 function paintAnswer(event) {
   const index = emotions.findIndex((item) => item.btn === event.target);
-  emotionAnswer.innerText = emotions[index].answer;
+  const answer = emotions[index].answer;
+  localStorage.setItem(EMOTIONCHOICE_KEY, answer);
+  emotionAnswer.innerText = answer;
 }
 
-emotionBtn.forEach((element) => {
-  element.addEventListener("click", paintAnswer);
-});
+const savedEmotion = localStorage.getItem(EMOTIONCHOICE_KEY);
+
+if (savedEmotion === null) {
+  emotionBtn.forEach((element) => {
+    element.addEventListener("click", paintAnswer);
+  });
+} else {
+  emotionAnswer.innerText = savedEmotion;
+  emotionBtn.forEach((element) => {
+    element.addEventListener("click", paintAnswer);
+  });
+}
