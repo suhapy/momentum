@@ -26,6 +26,18 @@ main {
   padding: 60px;
 }
 
+/* animations */
+@keyframes drop-ani {
+  from {
+    transform: translateY(-12px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
 /* background */
 .background-image {
   width: 100%;
@@ -130,16 +142,19 @@ input[type="text"]::placeholder {
 .background-info {
   font-size: var(--font-size-s);
   opacity: 0.3;
-  transition: all 0.3s ease-in-out;
+  transition: all 1s ease-out;
 }
 .background-info__share {
-  display: flex;
+  display: none;
   align-items: center;
 }
 .background-info:hover {
   opacity: 1;
   cursor: pointer;
-  transform: scale(1.03);
+}
+.background-info:hover .background-info__share {
+  display: flex;
+  animation: drop-ani 1s ease-out;
 }
 .background-info__text {
   margin-right: 6px;
